@@ -103,4 +103,16 @@ The API will now be available at `http://localhost:5000`.
 
 ## Assumptions and Design Decisions
 
-- The `supplier`
+- The `supplier` field for services is optional, as specified in the assignment.
+- The `total_duration` and `total_price` fields for appointments are calculated and stored, rather than being computed on-the-fly. This decision was made to improve read performance at the cost of some additional storage.
+- The application doesn't include authentication or authorization mechanisms due to time constraints. In a production environment, these would be crucial additions.
+- The API doesn't include endpoints for managing medspas. It's assumed that medspas are created through another process or directly in the database.
+- The status of an appointment can only be 'scheduled', 'completed', or 'canceled'. Any attempt to set a different status will result in an error.
+- When creating an appointment, all specified services must exist and be associated with the same medspa as the appointment.
+- The application uses UTC timestamps. In a production environment, time zone handling would need to be considered more carefully.
+- Error messages are kept simple for this prototype. In a production environment, more detailed error responses would be beneficial.
+- The database schema includes indexes on frequently queried fields to improve performance. In a production environment, these indexes should be reviewed and optimized based on actual query patterns.
+
+## Conclusion
+
+This implementation provides a basic foundation for a medspa management system, fulfilling the core requirements of the assignment within the given two-hour time constraint. It demonstrates the ability to design a sensible database schema and implement RESTful CRUD functionality. The chosen technologies (Flask, SQLAlchemy, PostgreSQL) provide a solid, scalable foundation that can be built upon for a more comprehensive system.
