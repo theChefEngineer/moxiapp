@@ -6,7 +6,7 @@ This is a simple RESTful CRUD application for managing medspa services and appoi
 
 1. Clone this repository:
    ```
-   git clone https://github.com/your-username/moxie-project.git
+   git clone https://github.com/your-username/moxie-project.git](https://github.com/theChefEngineer/moxiapp)
    cd moxie-project
    ```
 
